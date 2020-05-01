@@ -1,26 +1,69 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import { Container } from "./layoutComponents"
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+
+const isPartiallyActive = ({ isPartiallyCurrent }) =>
+  isPartiallyCurrent ? { className: "nav-active" } : null;
 
 const Header = ({ siteTitle, className }) => (
   <header className={className}>
-    <Container>
-      <h1>
+    <TitleNavContainer>
+      <TitleHeader>
         <Link to="/">{siteTitle}</Link>
-      </h1>
-    </Container>
+      </TitleHeader>
+      <NavMenu id="menu">
+        <NavItem>
+          <Link
+            to="/article/"
+            activeClassName="nav-active"
+            getProps={isPartiallyActive}
+          >
+            Article
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link
+            to="/video/"
+            activeClassName="nav-active"
+            getProps={isPartiallyActive}
+          >
+            Video
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link
+            to="/code/"
+            activeClassName="nav-active"
+            getProps={isPartiallyActive}
+          >
+            Code
+          </Link>
+        </NavItem>
+      </NavMenu>
+    </TitleNavContainer>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
+
+const TitleNavContainer = styled.div`
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 0px 1.0875rem;
+  padding-top: 0;
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const StyledHeader = styled(Header)`
   color: var(--white);
@@ -30,6 +73,39 @@ const StyledHeader = styled(Header)`
   h1 {
     margin: 0;
   }
+`;
+
+const TitleHeader = styled.h1`
+  float: left;
 `
 
-export default StyledHeader
+const NavMenu = styled.ul`
+  display: inline-block;
+  float: right;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0;
+  @media (max-width: 500px) {
+    margin-bottom: 1rem;
+  }
+`;
+
+const NavItem = styled.li`
+  display: inline;
+  a {
+    padding: 5px 10px;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      border-bottom: 1px solid;
+  }
+  &:hover {
+    border-bottom: 1px solid #139fc9;
+  }
+  .nav-active {
+    color: #139fc9;
+  }
+`;
+
+export default StyledHeader;

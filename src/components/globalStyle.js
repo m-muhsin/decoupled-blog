@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components"
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Karla|Lato');
   :root {
-    --primary-color: rebeccapurple;
-    --white: #FFFAFF;
+    --primary-color: #205D86;
+    --white: #FFFFFF;
   }
   * {
     box-sizing: border-box;
@@ -18,15 +18,16 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
+    -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu', 'Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
   }
   main {
     flex: 1 0 auto;
     h1,h2,h3,h4,h5,h6 {
-    font-family: Karla;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu', 'Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
     color: #0c2340;
     }
     a {
-      color: #2A5DB0;
+      color: #205D86;
     }
   }
   a {
@@ -224,7 +225,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: georgia, serif;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu', 'Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;

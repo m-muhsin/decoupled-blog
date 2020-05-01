@@ -9,10 +9,17 @@ export const MainWrapper = styled.div`
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 840px;
   padding: 0px 1.0875rem;
   padding-top: 0;
 `
+
+export const MediumImageCountainer = styled.div`
+  max-width: 540px;
+  margin-bottom: 1.45rem;
+  margin: 0 auto;
+`;
+
 export const Row = styled.div`
   display: flex;
   flex: ${props => (props.flex ? props.flex : "initial")};
