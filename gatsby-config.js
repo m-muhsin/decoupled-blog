@@ -6,7 +6,7 @@ module.exports = {
     description: `Resources for your Decoupled WordPress journey.`,
     author: `@muhsinlk`,
     url: "https://decoupled.blog", // No trailing slash allowed!
-    image: "public/icons/icon-512x512.png", // Path to your image you placed in the 'static' folder
+    image: "/icons/icon-512x512.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@muhsinlk",
   },
   plugins: [
