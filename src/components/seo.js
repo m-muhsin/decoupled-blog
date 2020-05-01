@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `image`,
-                content: seo.image,
+                content: data.site.siteMetadata,
               },
               {
                 property: `og:title`,
@@ -32,7 +32,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `og:image`,
-                content: seo.image,
+                content: data.site.siteMetadata,
               },
               {
                 name: `twitter:card`,
