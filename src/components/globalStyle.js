@@ -645,4 +645,7 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 100%;
     }
   }
+  .nav-active {
+    border-bottom: 1px solid rgb(19, 159, 201);
+  }
 `

@@ -103,9 +103,6 @@ const NavItem = styled.li`
   &:hover {
     border-bottom: 1px solid #139fc9;
   }
-  .nav-active {
-    color: #139fc9;
-  }
 `;
 
 export default StyledHeader;
