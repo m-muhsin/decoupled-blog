@@ -1,21 +1,24 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Image = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "decoupled-diagram.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
+const DSImage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "decoupled-diagram.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 900) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-    `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    }
+  `)
+
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid}
+    alt="Decoupled Solutions Icon"
+    title="Decoupled Solutions Icon"
   />
-)
-export default Image
+}
+
+export default DSImage

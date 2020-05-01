@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const AuditScreenshotImage = () => {
+const AuditImage = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "audit-screenshot.png" }) {
@@ -22,4 +22,4 @@ const AuditScreenshotImage = () => {
   />
 }
 
-export default AuditScreenshotImage
+export default AuditImage
