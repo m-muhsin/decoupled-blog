@@ -85,9 +85,6 @@ const NavMenu = styled.ul`
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   margin-left: 0;
-  @media (max-width: 500px) {
-    margin-bottom: 1rem;
-  }
 `;
 
 const NavItem = styled.li`
