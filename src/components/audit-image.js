@@ -7,7 +7,7 @@ const AuditImage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "audit-screenshot.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1200) {
+          fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }

@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Karla|Lato');
   :root {
     --primary-color: #205D86;
     --white: #FFFFFF;
@@ -10,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    font-family: lato;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
