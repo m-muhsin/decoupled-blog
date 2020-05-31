@@ -6,11 +6,16 @@ import styled from "styled-components";
 const isPartiallyActive = ({ isPartiallyCurrent }) =>
   isPartiallyCurrent ? { className: "nav-active" } : null;
 
-const Header = ({ siteTitle, className }) => (
-  <header className={className}>
+const Header = ({ siteTitle }) => (
+  <MainHeader>
     <TitleNavContainer>
       <TitleHeader>
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/">
+          <LogoLinkImg
+            src={require("../images/decoupled-blog-logo.svg")}
+            alt={siteTitle}
+          />
+        </Link>
       </TitleHeader>
       <NavMenu id="menu">
         <NavItem>
@@ -42,7 +47,7 @@ const Header = ({ siteTitle, className }) => (
         </NavItem>
       </NavMenu>
     </TitleNavContainer>
-  </header>
+  </MainHeader>
 );
 
 Header.propTypes = {
@@ -52,6 +57,17 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 };
+
+const MainHeader = styled.header`
+  padding-top: 0.5rem;
+  color: var(--primary-color);
+  background: var(--white);
+  margin-bottom: 1.5rem;
+  h1 {
+    margin: 0;
+  }
+  border-bottom: 1px dashed var(--primary-color);
+`;
 
 const TitleNavContainer = styled.div`
   margin: 0 auto;
@@ -65,24 +81,19 @@ const TitleNavContainer = styled.div`
   }
 `;
 
-const StyledHeader = styled(Header)`
-  color: var(--white);
-  background: var(--primary-color);
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  h1 {
-    margin: 0;
-  }
-`;
-
 const TitleHeader = styled.h1`
   float: left;
-`
+`;
+
+const LogoLinkImg = styled.img`
+  width: 100%;
+  margin-bottom: 0;
+`;
 
 const NavMenu = styled.ul`
   display: inline-block;
   float: right;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.25rem;
   margin-left: 0;
 `;
@@ -102,4 +113,4 @@ const NavItem = styled.li`
   }
 `;
 
-export default StyledHeader;
+export default Header;
