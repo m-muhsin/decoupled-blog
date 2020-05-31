@@ -74,7 +74,7 @@ const TitleNavContainer = styled.div`
   max-width: 840px;
   padding: 0px 1.0875rem;
   padding-top: 0;
-  @media (max-width: 500px) {
+  @media (max-width: 599px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,10 +93,13 @@ const LogoLinkImg = styled.img`
 const NavMenu = styled.ul`
   display: inline-block;
   float: right;
-  margin-top: 1rem;
   margin-bottom: 0.25rem;
   margin-left: 0;
-`;
+
+  @media (min-width: 600px) {
+    margin-top: 1rem;
+  }
+  `;
 
 const NavItem = styled.li`
   display: inline;
