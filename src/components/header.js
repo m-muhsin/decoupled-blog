@@ -66,7 +66,7 @@ const MainHeader = styled.header`
   h1 {
     margin: 0;
   }
-  border-bottom: 1px dashed var(--primary-color);
+  border-bottom: 2px dashed var(--primary-color);
 `;
 
 const TitleNavContainer = styled.div`
@@ -99,7 +99,7 @@ const NavMenu = styled.ul`
   @media (min-width: 600px) {
     margin-top: 1rem;
   }
-  `;
+`;
 
 const NavItem = styled.li`
   display: inline;
